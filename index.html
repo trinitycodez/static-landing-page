@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online food website for your orders">
+    <meta name="keywords" content="food, Online food, Varieties, Confectioneries, Diet ">
+    <meta name="author" content="Emmanuel T.O.">
+    <link rel="shortcut icon" href="./IMAGE/Logo.png" type="image/x-icon">
+    <title>Home | page</title>
+    <style>
+        *, 
+        *::after,
+        *::before {
+            padding: 0em;
+            margin: 0em;
+            box-sizing: border-box;
+        }
+        :root {
+            --header-height: 50px;
+            --padding-left-logoCont: 8em;
+        }
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+        .header-head {
+            display: flex;
+            flex-direction: row;
+            position: sticky;
+            top: 0em;
+            height: auto;
+            margin-top: 1em;
+            z-index: 3;
+            align-items: center;
+            /* border: 2px solid #f9a; */
+        }
+        .left-align {
+            display: inherit;
+            align-items: center;
+            /* border: 2px solid red; */
+            /* height: var(--header-height); */
+            height: auto;
+            width: 12.7em;
+            margin-left: var(--padding-left-logoCont);
+        }
+        #right-margin {
+            margin-right: 7em;
+        }
+        .header-nav {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            z-index: 2;
+            /* border: 2px solid #000; */
+            width: 100%;
+            height: var(--header-height);
+        }
+        .headList {
+            /* border: 2px solid #f9a; */
+            display: flex;
+            /* position: fixed;
+            right: 0px;
+            top: 0px; */
+            z-index: 2;
+            list-style: none;
+            font-size: 1.6rem;
+            height: inherit;
+        }
+        .headList li {
+            display: flex;
+            flex-direction: column;
+            margin: auto 1em;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .active-sign {
+            height: 0.9rem; 
+            width: 0.9rem; 
+            border-radius: 0.45rem; 
+            position: absolute; 
+            top: 1.3em; 
+            background-color: #ff9f0d;
+            border: 2px solid #fff;
+        }
+        .notification_event {
+            height: 1.3rem; 
+            width: 1.3rem; 
+            border-radius: 0.65rem; 
+            position: absolute;
+            top: -0.5rem;
+            right: 1.1rem;
+            background-color: #ffffff;
+            border: 2px solid #ff9f0d;
+        }
+        #blob1 {
+            display: flex;
+            position: absolute;
+            /* border: 2px solid #abc; */
+            right: 0px;
+            top: 0px;
+            z-index: 1;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            position: relative;
+            background-color: #fff;
+            /* border: 0.1px solid #000; */
+        }
+        .displayContent {
+            display: flex;
+            /* border: 2px solid rgb(153, 255, 207); */
+            height: auto;
+            width: 100%;
+            margin-top: 2em;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #div1, #div2 {
+            /* border: 2px solid #abc; */
+            font-size: 2em;
+        }
+        #div1 {
+            height: 22em;
+            width: 24em; /*40em*/
+            padding: 4em 0em 0em 4em;
+            z-index: 2;
+            /* padding-left: var(--padding-left-logoCont); */
+        }
+        h1 {
+            font-size: 2em;
+        }
+        #div2 {
+            width: 58.5rem;
+            /* height: 61.8rem; */
+            height: 50rem;
+            z-index: 2;
+            position: relative;
+            right: 0px;
+            /* background-color: rgba(209, 88, 31, 0); */
+            /* border: 2px dashed #546; */
+            margin-right: 2em;
+        }
+        .btn-order, .btn{
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            background-color: #ff9f0d;
+            box-shadow: 2px 2px 15px #f0c078;
+        }
+        .btn-order a, .btn-about a{
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background-color: #fcaf3d;
+        }
+        #div1-img1{
+            position: absolute;
+            top: 45em;
+            left: 0em;
+            /* margin-top: 1em; */
+            /* border: 2px dashed #f00; */
+            height: auto;
+            width: 20.9em;
+        }
+        .booking-now {
+            display: inherit;
+            justify-content: center;
+            align-items: center;
+            z-index: 2; 
+            box-shadow: none; 
+            background-color: #fff;
+            padding: 1em 1.1em;
+            height: 3.3em;
+            border-radius: 2em;
+        }
+        .booking-now a {
+            color: #133;
+        }
+        /* contacts */
+        .contacts {
+            display: flex;
+            flex-direction: row;
+            /* border: 2px solid hsl(140, 90%, 50%); */
+            /* justify-content: center; */
+            align-items: center;
+            height: auto;
+            width: 100%;
+            margin: 16em 0px 10em 0px;
+            /* construct */
+            position: relative;
+        }
+        .contacts-container {
+            display: flex;
+            flex-direction: row;
+            margin: 0em auto;
+            max-width: 100%;
+            padding: 2em;
+            position: relative;
+        }
+        .contactItems {
+            /* border: 2px dashed #f00; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 5px 10px;
+            padding: 7px 5px;
+            text-align: center;
+            background-color: #fff;
+            width: 30em;
+            height: 12em;
+            box-shadow: 6px 6px 20px rgb(233, 224, 224);
+            border-radius: 0px 30px 0px;
+            /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+        }
+        .contactItems:hover,
+        .contentItems:hover {
+            transform: scale(1.1);
+        }
+        p {
+            opacity: 96%;
+        }
+        .circular-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ff9f0d;
+            margin: 0em auto;
+            height: 4.5em;
+            width: 4.5em;
+            border-radius: 2.25em;
+        }
+        .content-circular-icon {
+            height: 7em;
+            width: 7em;
+            border-radius: 0em;
+            background-color: transparent;
+        }
+        .mainPara {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .subPara {
+            font-size: 1.8em;
+            filter: opacity(85%);
+            -webkit-filter: opacity(85%);
+        }
+        /* #more-prodSVG */
+        #blob3 {
+            display: flex;
+            position: absolute;
+            z-index: 1;
+            top: 100em;        
+        }
+        /* more products */
+        /* .more-prod{
+            border: 2px solid #000;
+        } */
+        .more-prod .items {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            left: 0em;
+            top: 0em;
+            /* justify-content: space-between; */
+            align-items: center;
+            /* border: 2px dashed #903; */
+            height: auto;
+            z-index: 2;
+        }
+        .more-prod #item1, 
+        .more-prod #item2 {
+            /* background-color: #340; */
+            width: auto;
+        }
+        .more-prod #item1 {
+            width: 48em;
+            height: auto;
+            margin-left: 5em;
+            /* border: 2px solid yellow; */
+        }
+        .more-prod #item2 {
+            font-size: 2em;
+            width: 24em;
+            margin: 0em 5em; /* 7em */
+            /* border: 2px solid #546; */
+        }
+        #item2 h2 {
+            width: 12em;
+        }
+        .about-nav {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            width: 17em;
+            /* border: 2px dashed #f00; */
+        }
+        .play-flex {
+            display: flex;
+            flex-wrap: nowrap;
+            margin: 0px 1em;
+            justify-content: center;
+            align-items: center;
+        }
+        #play {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px; 
+            height: 35px; 
+            margin: 0px 0.6em 0px 0px;
+            background-color: rgb(3, 3, 3);
+            border-radius: 17.5px;
+        }
+        /* how it works */
+        /* .content3 {
+            border: 2px solid #f00;
+        } */
+        .works {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            /* border: 2px solid #546; */
+            width: 100%;
+            min-height: 35em;
+        }
+        .works-content {
+            display: block;
+            width: 25em;
+            font-size: 2em;
+            /* border: 2px dashed #f0c078; */
+            text-align: center;
+            padding: 3em 0em;
+        }
+        #div2-img2 {
+            position: absolute;
+            top: 145rem;
+            right: 0em;
+            /* border: 2px dashed #f00; */
+            height: 25em; 
+            width: auto;
+            transform: scaleX(-1);
+            -ms-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+        }
+        /* content 4 in content 3 */
+        .content4 {
+            /* border: 2px solid rgb(0, 41, 153); */
+            padding: 1em 0px;
+            margin: 0px;
+        }
+        .content4 .items {
+            /* border: 2px dashed #ff9f0d; */
+            height: 8em;
+            width: 8em;
+        }   
+        .content4 .subPara{
+            filter: none;
+            -webkit-filter: none;
+            font-size: 2em !important;
+        }
+        .content4 .contentItems {
+            display: block;
+            width: 25em !important;
+            height: 27em !important;
+        }
+        /*section && short note */
+        section {
+            z-index: 2;
+        }
+        .menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* border: 2px solid rgb(0, 41, 153); */
+        }
+        .short-note {
+            text-align: center;
+            max-width: 25em;
+            font-size: 2em;
+            /* border: 2px dotted #a18; */
+            margin: 3em auto 0em;
+            padding: .3em;
+        }
+        .menu-grid {
+            display: grid;
+            /* background-color: #903; */
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto;
+            column-gap: 1em;
+            -moz-column-gap: 1em;
+            -webkit-column-gap: 1em;
+            row-gap: 3em;
+            margin: 2em auto;
+            padding: 1em 2em 2em 2em;
+            /* width: 66%; */
+        }
+        .menu-items {
+            /* background-color: rgb(196, 192, 192); */
+            background-color: #fff;
+            border-radius: 0px 20px 0px 20px;
+            font-size: 1.4em;
+            box-shadow: 1px 6px 18px rgb(233 224 224);
+        }
+        .img-food {
+            height: 11em;
+            width: 15em; /* auto*/
+            overflow-y: hidden;
+        }
+        .img-food img {
+            object-fit: cover;
+            /* border: 2px solid yellow; */
+            border-radius: 0px 20px 0px 20px;
+        }
+        .chef-desc {
+            padding: 0px 1em;
+            width: 15em;
+        }
+        .bio-price {
+            display: flex;
+            justify-content: space-between;
+            /* border: 1px dotted #a18; */
+            padding: 2px 0px;
+        }
+        .cook-bio > * {
+            display: inline-block;
+            width: 8em;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            -ms-text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .cook-desc {
+            width: auto; /* 18em*/
+            height: 4em;
+            padding: 4px 0px;
+            overflow: hidden;
+            /* border: 2px solid #f0c078; */
+        }
+        .rate-add {
+            display: flex;
+            /* border: 2px dashed #143; */
+            justify-content: space-between;
+            align-items: center;
+            margin: 0px -1em 0px 0px;
+        }
+        #rate {
+            /* stars */
+            display: flex;
+            flex-wrap: nowrap;
+            height: 2em;
+            /* border: 2px dashed #159; */
+            width: 7.6em;
+            align-items: center;
+            justify-content: space-around;
+        }
+        #rate svg {
+            fill: rgb(196, 192, 192);
+            width: 1.8rem;
+            height: auto; 
+        }
+        #add {
+            display: flex;
+            height: 2.3em;
+            /* border: 2px dashed #123; */
+            width: 5rem;
+            border-radius: 20px 0px 0px 0px;
+            background-color: #ff9f0d;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        #add svg {
+            width: 30%;
+        }
+        /* seller comment */
+        .comment, 
+        .question {
+            margin: 5em auto 0px;
+        }
+        .seller {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1em;
+            box-shadow: 1px 6px 18px rgb(233 224 224);
+            border-radius: 20px;
+            border: none;
+            width: 100%;
+        }
+        .seller-img {
+            width: 3em;
+            height: 3em;
+            border-radius: 1.5em;
+            border: 2px solid #143;
+        }
+        /* search */
+        /* form {
+            border: 2px solid #a2f;
+        } */
+        .search-container {
+            display: flex;
+            border-radius: 2.5em;
+            /* border: 2px dotted #f00; */
+            height: 5em;
+            width: 40em;
+            margin-top: 3em;
+            justify-content: space-between ;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 1px 6px 18px rgb(233 224 224);
+        }
+        .search-container input {
+            height: 2em;
+            width: 100%;
+            padding: 0em 1em;
+            margin: 0em 1em;
+            border: none;
+            outline: none;
+        }
+        .btn-search {
+            padding: .8em 2.5em;
+            margin-right: .3em;
+            border: none;
+            border-radius: 23em;
+            background-color: #ff9f0d;
+            box-shadow: 2px 2px 15px #f0c078;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .search-icon {
+            display: none;
+        }
+        /* footer */
+        .footer {
+            display: flex;
+            flex-direction: column;
+            /* border: 2px solid #ff9f0d; */
+            margin: 9em 0px 1em;
+            justify-content: end;
+            align-items: center;
+            font-size: 1.3em;
+            z-index: 2;
+        }
+        .footer-nav, 
+        .footer-end {
+            display: flex;
+            flex-direction: row;
+            /* border: 2px dashed #f9a; */
+            justify-content: center;
+            width: 100%;
+        }
+        .footer-end {
+            flex-wrap: nowrap;
+            height: 5em;
+            align-items: end;
+            /* border: 2px dotted #903; */
+        }
+        .footer-img {
+            /* width: 8em; */
+            width: 57%;
+            height: auto;
+            margin-left: -0.2em;
+        }
+        .social-media {
+            display: inherit;
+            width: 100%;
+        }
+        .social-media svg {
+            margin: .5em .4em;
+        }
+        .social-media svg:hover path {
+            fill: #ff9b05;
+        }
+        .footer-list {
+            display: flex;
+            flex-direction: column;
+            /* border: 2px solid #780; */
+            width: 15em !important;
+            padding-left: 1em;
+        }
+        .footer-list div {
+            opacity: 85%;
+        }
+        .footer-list div:nth-child(1) {
+            opacity: 100%;
+        }
+        .footer-nav2 ul {
+            list-style: none;
+        }
+        /* blob2 begins */
+        div[id="blob2"] {
+            display: flex;
+            flex-direction: column;
+            /* border: 2px dotted #345; */
+            z-index: 1;
+            /* background-color: #f00; */
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+        }
+        .bg-leaf-img {
+            /* border: 2px dashed #903; */
+            height: 18.3em;
+            width: 18.4em;
+            position: absolute;
+            right: 0px;
+            bottom: 73em;
+        }
+         /* nav-btn */
+        .nav-btn {
+            display: none;
+        }
+        .bg-layout, .nav-btn-menu {
+            /* edit */
+            display: none;
+        }
+        .contact-pull,
+        .contact-push {
+            display: none;
+        }
+
+        /* {my media query
+        @media screen and (max-width: 480px) {
+            
+        }
+        @media screen and (min-width: 480px) and (max-width: 768px) {
+            
+        }
+        @media screen and (min-width: 768px) and (max-width: 1279px) {
+            
+        } }*/
+        @media screen and (max-width: 480px) {
+            html {
+                font-size: 50.5%;
+            }
+            .left-align {
+                --padding-left-logoCont: 1em;
+                /* border: 2px solid red; */
+                max-height: auto;
+                max-width: 100%;
+            }
+            .nav-btn {
+                width: 4em !important; /*3.5em*/
+                height: 4em !important;
+                border-radius: 2em !important;
+            }
+            .nav-btn-menu {
+                padding: 2em 0em !important;
+                margin: 2em 2em !important;
+                width: 45% !important;
+            }
+            .bg-layout {padding-top: 2em !important;}
+            .fixRelBtn {
+                position: sticky;
+                top: 1.2em !important;
+            }
+            .first-btnNav svg {width: 2em !important;}
+            .second-btnNav svg {width: 1.4em !important;} 
+            .displayContent {
+                background: url(./IMAGE/landingPageImage.png) no-repeat;
+                background-position: 100% 0%;
+                background-size: contain;
+                text-shadow: 1px 1px 2px #fff;
+            }  
+            #right-margin {
+                margin-right: 2em;
+            }
+            #div1 {
+                padding: 3em 1em 0em;
+            }
+            #div2, .more-prod #item1 {
+                display: none;
+            }
+            #div1-img1 {
+                top: 55rem;
+                width: auto;
+            }
+            #div2-img2 { 
+                height: auto;
+            }
+            #blob3 {
+                display: none;
+            }
+            .contactItems {
+                min-width: 22em !important;
+            }
+            .btn-about {
+                width: fit-content;
+            }
+            .play-flex {
+                justify-content: flex-start;
+                margin: 0em 0em 0em 1em;
+            }
+            #item2 h2, 
+            .about-text {
+                width: auto;
+            }
+            .about-nav {
+                /* border: 2px solid red; */
+                justify-content: start;
+            }
+            .more-prod #item2 {
+                backdrop-filter: blur(1px);
+                margin: 0em !important;
+                padding: 0em 1em 1em;
+                max-width: 100%;
+            }
+            .works-content {
+                width: 86%;
+            }
+            .menu-grid {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                overflow: auto hidden;
+                padding: 1em 1em 2em 1em;
+            }
+            .menu-items:nth-child(4), 
+            .menu-items:nth-child(5), 
+            .menu-items:nth-child(6) {
+                display: none;
+            }
+            #rate {
+                width: initial;
+            }
+            .search-container {
+                width: 100%;
+            }
+            .search-icon {
+                display: block;
+                height: 2.5em;
+                width: 2.5em;
+                margin-right: 2em;
+                opacity: 0.59;
+            }
+            .btn-search {display: none;}
+            .footer-nav {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+            .footer-img  {
+                width: 69%;
+            }
+            .footer-list {
+                max-width: 10em;
+                padding-bottom: 1rem;
+            }
+            @media screen and (max-width: 195px) {
+                body {
+                    zoom: 55%; 
+                    -ms-zoom: 55%;
+                }
+                .contact-push {display: none !important;}
+                .nav-btn-menu {
+                    height: 90% !important;
+                    width: calc(100% - 10%) !important;
+                }
+                .nav-menuList {
+                    height: calc(100vh - -25vh) !important;
+                }
+            }
+        }
+        @media screen and (min-width: 480px) and (max-width: 768px) {
+            /* begin sixs */
+            @media screen and (max-width: 666px) {
+                html {
+                    font-size: 55.5%;
+                }
+                #div1 {
+                    margin: auto;
+                }
+                #div2 {display: none;}
+                .more-prod #item1 {display: none;}
+                #item2 h2 {
+                    text-align: left; 
+                    width: auto;
+                }
+                .more-prod #item2 {
+                    display: inherit;
+                    margin: auto !important;
+                    flex-direction: column;
+                    padding-left: 1em;
+                }
+                .displayContent {
+                    background: url(./IMAGE/landingPageImage.png) no-repeat;
+                    background-position: 100% 100%;
+                    background-size: contain;
+                    text-shadow: 1px 1px 2px #fff;
+                }
+                .about-text {
+                    width: 20em; 
+                    text-align: left;
+                }
+                .footer-img  {
+                    width: 69%;
+                }
+                .fixRelBtn {
+                    position: sticky;
+                    top: .7em !important;
+                }
+            } 
+            /* end of sixs */
+            .left-align {
+                --padding-left-logoCont: 2em;
+            }
+            #right-margin {margin-right: 4em;}
+            .nav-btn-menu {margin: 2em 4em !important;}
+            #div1 {padding: 4em 0em 0em 1em;}
+            #div2 {margin-right: 0em;}
+            #div2-img2,
+            #div1-img1 {
+                width: auto;
+                height: auto;
+            }
+            .more-prod #item1 {margin-left: 2em; width: auto !important;}
+            .more-prod #item2 {width: calc(100% - 22%) !important;}
+            .menu-grid-toggle {
+                display: grid;
+                grid-template-columns: auto auto !important;
+                grid-template-rows: auto auto !important;
+                background-color: #903;
+                column-gap: 1em;
+                row-gap: 3em;
+                -moz-column-gap: 1em;
+                -webkit-column-gap: 1em;
+                margin: 2em auto;
+                padding: 0px 1em 1em;
+            }
+            .menu-items:nth-child(5), 
+            .menu-items:nth-child(6) {
+                display: none;
+            }
+        }
+        @media screen and (max-width: 868px) {
+            .headList, 
+            .booking-now {
+                display: none;
+            }
+            .contacts-container {
+                flex-wrap: nowrap;
+                overflow: auto hidden;
+            }
+            .contactItems {min-width: 30em;}
+            #div1 {height: auto;}
+            #div1-img1,
+            #div2-img2 {
+                width: auto;
+                height: auto;
+            }
+            #div1-img1 { top: 55rem; }
+            #div2-img2 { top: 139rem; }
+            .more-prod #item1 {
+                height: auto;
+                width: 48em;
+            }
+            .more-prod #item2 {margin: 0px 1em}
+            .relFixBtn {
+                position: relative !important;
+            }
+            .fixRelBtn {
+                position: sticky;
+                top: 0em;
+            }
+            .nav-btn {
+                display: flex !important;
+                height: 5em;
+                width: 5em;
+                border-radius: 2.5em;
+                background-color: #ff9f0d;
+                justify-content: center;
+                align-items: center;
+                z-index: 2;
+                background: linear-gradient(50.56deg, #FF9F0D 24.53%, #FFC327 58.88%);
+                box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.44), 
+                inset 4px -2px 4px 1px rgba(0, 0, 0, 0.11);
+                transform-origin: 50% 50%;
+                -o-transform-origin: 50% 50%;
+                -moz-transform-origin: 50% 50%;
+                -webkit-transform-origin: 50% 50%;
+            }
+            .nav-btn:active {
+                transform: scale(0.9, 0.9);
+                -o-transform: scale(0.9, 0.9);
+                -moz-transform: scale(0.9, 0.9);
+                -webkit-transform: scale(0.9, 0.9);
+                box-shadow: 1px 1px 15px #f3d9b3;
+            }
+            /* begin */
+            .bg-layout {
+                display: none;
+                flex-direction: column;
+                justify-content: right;
+                align-items: flex-end;
+                position: absolute;
+                z-index: 3;
+                padding-top: 1em;
+                /* border: 2px solid #000; */
+                background: hsla(0, 0%, 100%, 0.651);
+                height: 100%;
+                width: 100%;
+            }
+            .nav-btn-menu {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                width: 35%;
+                padding: 2em 3em;
+                margin: 2em 7em;
+                background: linear-gradient(42.06deg, #D9D9D9 28.71%, rgba(255, 255, 255, 0.9) 78.4%);
+                box-shadow: inset 4px -4px 30px 16px rgba(0, 0, 0, 0.25);
+                border-radius: 3em;
+            }
+            .nav-menuList {
+                height: calc(100vh - 30vh);
+                /* border: 2px dotted #f00; */
+                overflow-y: auto;
+                box-shadow: inset 1px 1px 5px -2px #808080;
+                border-radius: 2em 2em 0em 0em;
+            }
+            #nav-social-media {
+                justify-content: space-evenly;
+                margin: 2em auto;
+            }
+            #btn-headerList {
+                /* items when btn header is clicked */
+                border: none;
+                display: block;
+                z-index: 2;
+                list-style: none;
+                font-size: 1.8em;
+                height: auto;
+            }
+            #btn-headerList li {
+                margin: 2em auto !important;
+                padding: 1em 0em;
+            }
+            /* end */
+            .contact-pull {
+                display: none;
+                position: absolute;
+                left: 0em;
+                height: 100%;
+                width: 20%;
+                z-index: 1;
+                background: linear-gradient(90.42deg, #ffffff 28.69%, rgba(255, 255, 255, 0.85) 73.34%, rgba(255, 255, 255, 0) 99.6%);
+                justify-content: center;
+                align-items: center;
+                /* backdrop-filter: blur(3.5px); */
+            }
+            .contact-push {
+                display: flex;
+                position: absolute;
+                right: 0em;
+                height: 100%;
+                width: 20%;
+                z-index: 1;
+                transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                background: linear-gradient(90.42deg, #FFFFFF 28.69%, rgba(255, 255, 255, 0.85) 73.34%, rgba(255, 255, 255, 0) 99.6%);
+                justify-content: center;
+                align-items: center;
+            }
+            .push-svg,
+            .pull-svg {
+                display: inherit;
+                align-items: center;
+                width: auto;
+                height: auto;
+                opacity: .7;
+                animation: movingPushPull 1.5s cubic-bezier(0.8, 0.68, 0.98, 1.5) -2ms 5 reverse forwards;
+                -o-animation: movingPushPull 1.5s cubic-bezier(0.8, 0.68, 0.98, 1.5) -2ms 5 reverse forwards;
+                -moz-animation: movingPushPull 1.5s cubic-bezier(0.8, 0.68, 0.98, 1.5) -2ms 5 reverse forwards;
+                -webkit-animation: movingPushPull 1.5s cubic-bezier(0.8, 0.68, 0.98, 1.5) -2ms 5 reverse forwards;
+            }
+            @keyframes movingPushPull {
+                0% {
+                    transform-origin: 50% 50%;
+                    transform: translateX(0px);
+                    -o-transform: 50% 50%;
+                    -o-transform: translateX(0px);
+                    -moz-transform-origin: 50% 50%;
+                    -moz-transform: translateX(0px);
+                    -webkit-transform-origin: 50% 50%;
+                    -webkit-transform: translateX(0px);
+                }
+                50% {
+                    transform-origin: 50% 50%;
+                    transform: translateX(5px);
+                    -o-transform: 50% 50%;
+                    -o-transform: translateX(5px);
+                    -moz-transform-origin: 50% 50%;
+                    -moz-transform: translateX(5px);
+                    -webkit-transform-origin: 50% 50%;
+                    -webkit-transform: translateX(5px);
+                }
+                100% {
+                    transform-origin: 50% 50%;
+                    transform: translateX(10px);
+                    -o-transform: 50% 50%;
+                    -o-transform: translateX(10px);
+                    -moz-transform-origin: 50% 50%;
+                    -moz-transform: translateX(10px);
+                    -webkit-transform-origin: 50% 50%;
+                    -webkit-transform: translateX(10px);
+                }
+            }
+        }
+        @media screen and (min-width: 1044px) {
+            #div2 {
+                height: auto;
+            }
+        }
+        @media (min-width: 1200px) {
+            html {
+                background-color: #113333;
+            }
+            body {
+                max-width: 1200px;
+            }
+        }
+        /* anchor tag */
+        .active {
+            color: #133;
+        }
+        a {
+            font-weight: bold;
+            color: #113333;
+            text-decoration: none;
+        }
+        a:hover {
+            color: rgb(6, 138, 94);
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="header-head">
+        <div class="left-align">
+            <img src="./IMAGE/first_logo.png" height="100%" width="100%" alt="brand-logo" />
+        </div>
+        <nav class="header-nav">
+            <ul class="headList">
+                <li>
+                    <a href="./index.html" class="active">Home</a>
+                    <div class="active-sign"></div>
+                </li>
+                <li>
+                    <a href="#">Packages</a>
+                </li>
+                <li>
+                    <a href="#">About Us</a>
+                </li>
+                <li>
+                    <a href="#">Contact Us</a>
+                </li>
+                <li>
+                    <div class="notification_event"></div>
+                    <a href="#">
+                        <svg width="58" height="55" viewBox="0 0 58 55" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: auto; width: 34%;">
+                            <path d="M20.4382 54.6667C22.7164 54.6667 24.5632 52.8199 24.5632 50.5417C24.5632 48.2636 22.7164 46.4167 20.4382 46.4167C18.1601 46.4167 16.3132 48.2636 16.3132 50.5417C16.3132 52.8199 18.1601 54.6667 20.4382 54.6667Z" fill="#133333"/>
+                            <path d="M45.5 54.6667C47.7782 54.6667 49.625 52.8199 49.625 50.5417C49.625 48.2636 47.7782 46.4167 45.5 46.4167C43.2218 46.4167 41.375 48.2636 41.375 50.5417C41.375 52.8199 43.2218 54.6667 45.5 54.6667Z" fill="#133333"/>
+                            <path d="M56.6466 5.84506C56.476 5.63475 56.2609 5.46485 56.0168 5.34756C55.7727 5.23027 55.5057 5.16851 55.2349 5.16672H17.0649L18.2566 8.83339H52.8332L47.9382 30.8334H20.4382L12.0599 4.30506C11.9693 4.02357 11.8119 3.76817 11.6012 3.56067C11.3905 3.35316 11.1327 3.19971 10.8499 3.11339L3.33323 0.803391C3.1021 0.732367 2.85925 0.707563 2.61854 0.730395C2.37783 0.753226 2.14397 0.823246 1.93032 0.936456C1.49883 1.16509 1.17584 1.55578 1.0324 2.02256C0.888959 2.48934 0.936824 2.99398 1.16546 3.42547C1.3941 3.85696 1.78478 4.17995 2.25156 4.32339L8.83323 6.34006L17.2482 32.9234L14.2416 35.3801L14.0032 35.6184C13.2595 36.4755 12.838 37.565 12.8112 38.6995C12.7844 39.8339 13.1541 40.9422 13.8566 41.8334C14.3563 42.4411 14.9912 42.9234 15.7107 43.2417C16.4301 43.5601 17.2141 43.7056 17.9999 43.6667H48.5982C49.0845 43.6667 49.5508 43.4736 49.8946 43.1298C50.2384 42.7859 50.4316 42.3196 50.4316 41.8334C50.4316 41.3472 50.2384 40.8808 49.8946 40.537C49.5508 40.1932 49.0845 40.0001 48.5982 40.0001H17.7066C17.4954 39.9928 17.2898 39.9313 17.1094 39.8214C16.929 39.7115 16.78 39.5569 16.6768 39.3726C16.5736 39.1883 16.5196 38.9805 16.5202 38.7693C16.5207 38.558 16.5757 38.3505 16.6799 38.1667L21.0982 34.5001H49.4049C49.8287 34.5104 50.243 34.3736 50.5772 34.1129C50.9115 33.8521 51.1451 33.4836 51.2382 33.0701L57.0499 7.40339C57.1056 7.13007 57.0983 6.84764 57.0284 6.57759C56.9585 6.30754 56.8279 6.05701 56.6466 5.84506Z" fill="#133333"/>
+                        </svg>                            
+                    </a>
+                </li>
+            </ul>
+            <button class="btn-order booking-now" id="right-margin" type="button"><a href="#">Booking Now</a></button>          
+            <div class="nav-btn first-btnNav" id="right-margin">
+                <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto;">
+                    <rect x="0.940912" y="0.304468" width="22.1182" height="1.75455" rx="0.877273" fill="white" stroke="white" stroke-width="0.3" stroke-linejoin="round"/>
+                    <rect x="3.85" y="6.12271" width="19.2091" height="1.75455" rx="0.877273" fill="white" stroke="white" stroke-width="0.3" stroke-linejoin="round"/>
+                    <rect x="5.30457" y="11.9411" width="17.7545" height="1.75455" rx="0.877273" fill="white" stroke="white" stroke-width="0.3" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </nav>
+    </header>
+    <!-- body design start -->
+    <div class="bg-layout">
+        <div class="nav-btn second-btnNav" id="right-margin">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto;">
+                <rect x="0.271164" y="12.68" width="17.4849" height="1.75455" rx="0.877273" transform="rotate(-47.5034 0.271164 12.68)" fill="white" stroke="white" stroke-width="0.3" stroke-linejoin="round"/>
+                <rect x="0.969884" y="0.259165" width="17.48" height="1.75455" rx="0.877273" transform="rotate(42.3421 0.969884 0.259165)" fill="white" stroke="white" stroke-width="0.3" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <div class="nav-btn-menu">
+            <div class="nav-menuList">
+                <ul class="headList" id="btn-headerList">
+                    <li>
+                        <a href="./index.html" class="active">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Packages</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Cart</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="social-media" id="nav-social-media">
+                <svg width="42" height="80" viewBox="0 0 42 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: auto; width: 6%;">
+                    <path d="M37.612 27.9999H28V19.9999C28 15.8719 28.336 13.2719 34.252 13.2719H37.724C39.932 13.2719 41.724 11.4799 41.724 9.2719V4.25591C41.724 2.16391 40.12 0.375906 38.032 0.235906C35.616 0.0719058 33.196 -0.00409427 30.772 -9.42655e-05C19.92 -9.42655e-05 12 6.62791 12 18.7959V27.9999H4C1.792 27.9999 0 29.7919 0 31.9999V39.9999C0 42.2079 1.792 43.9999 4 43.9999L12 43.9959V75.9999C12 78.2079 13.792 79.9999 16 79.9999H24C26.208 79.9999 28 78.2079 28 75.9999V43.9879L36.696 43.9839C38.728 43.9839 40.436 42.4599 40.668 40.4399L41.584 32.4559C41.86 30.0839 40.004 27.9999 37.612 27.9999Z" fill="#000000"/>
+                </svg>
+                <svg width="81" height="65" viewBox="0 0 81 65" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: auto; width: 12%;">
+                    <path d="M79.5361 1.12409C76.2761 2.66409 70.7281 5.55209 67.9401 6.10409C67.8321 6.13209 67.7441 6.16809 67.6401 6.19609C64.3881 2.98809 59.9321 1.00009 55.0001 1.00009C45.0601 1.00009 37.0001 9.06009 37.0001 19.0001C37.0001 19.5241 36.9561 20.4881 37.0001 21.0001C24.1281 21.0001 14.7281 14.2841 7.69208 5.65209C6.75208 4.49209 5.75208 5.09609 5.54408 5.92009C5.07608 7.78409 4.91608 10.9001 4.91608 13.1241C4.91608 18.7281 9.29608 24.2321 16.1161 27.6441C14.8601 27.9681 13.4761 28.2001 12.0361 28.2001C10.3401 28.2001 8.38808 27.7561 6.68008 26.8601C6.04808 26.5281 4.68408 26.6201 5.08808 28.2361C6.70808 34.7121 14.1001 39.2601 20.7041 40.5841C19.2041 41.4681 16.0041 41.2881 14.5321 41.2881C13.9881 41.2881 12.0961 41.1601 10.8721 41.0081C9.75608 40.8721 8.04008 41.1601 9.47608 43.3361C12.5601 48.0041 19.5361 50.9361 25.5401 51.0481C20.0121 55.3841 10.9721 56.9681 2.31208 56.9681C0.560077 56.9281 0.648077 58.9241 2.06008 59.6641C8.44808 63.0161 18.9121 65.0001 26.3881 65.0001C56.1081 65.0001 73.0001 42.3481 73.0001 20.9961C73.0001 20.6521 72.9921 19.9321 72.9801 19.2081C72.9801 19.1361 73.0001 19.0681 73.0001 18.9961C73.0001 18.8881 72.9681 18.7841 72.9681 18.6761C72.9561 18.1321 72.9441 17.6241 72.9321 17.3601C75.2881 15.6601 78.8961 12.7081 80.7201 10.4481C81.3401 9.68009 80.8401 8.74809 79.9961 9.04009C77.8241 9.79609 74.0681 11.2601 71.7161 11.5401C76.4241 8.42409 78.7521 5.71209 80.7521 2.70009C81.4361 1.67209 80.5801 0.628091 79.5361 1.12409Z" fill="#000000"/>
+                </svg> 
+                <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: auto; width: 10%;">
+                    <path d="M20 0C8.956 0 0 8.956 0 20V52C0 63.044 8.956 72 20 72H52C63.044 72 72 63.044 72 52V20C72 8.956 63.044 0 52 0H20ZM60 8C62.208 8 64 9.792 64 12C64 14.208 62.208 16 60 16C57.792 16 56 14.208 56 12C56 9.792 57.792 8 60 8ZM36 16C47.044 16 56 24.956 56 36C56 47.044 47.044 56 36 56C24.956 56 16 47.044 16 36C16 24.956 24.956 16 36 16ZM36 24C32.8174 24 29.7652 25.2643 27.5147 27.5147C25.2643 29.7652 24 32.8174 24 36C24 39.1826 25.2643 42.2348 27.5147 44.4853C29.7652 46.7357 32.8174 48 36 48C39.1826 48 42.2348 46.7357 44.4853 44.4853C46.7357 42.2348 48 39.1826 48 36C48 32.8174 46.7357 29.7652 44.4853 27.5147C42.2348 25.2643 39.1826 24 36 24Z" fill="#000000"/>
+                </svg>
+                <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: auto; width: 10%;">
+                    <path d="M12 0C5.42012 0 0 5.42012 0 12V60C0 66.5799 5.42012 72 12 72H60C66.5799 72 72 66.5799 72 60V12C72 5.42012 66.5799 0 60 0H12ZM12 8H60C62.2601 8 64 9.73988 64 12V60C64 62.2601 62.2601 64 60 64H12C9.73988 64 8 62.2601 8 60V12C8 9.73988 9.73988 8 12 8ZM36 16V44C36 46.2601 34.2601 48 32 48C29.7399 48 28 46.2601 28 44C28 41.7399 29.7399 40 32 40V32C25.4201 32 20 37.4201 20 44C20 50.5799 25.4201 56 32 56C38.5799 56 44 50.5799 44 44V28.9297C46.4646 30.6854 49.0365 32 52 32V24C51.8107 24 49.0507 23.1237 47.125 21.4453C45.1993 19.7669 44 17.66 44 16H36Z" fill="#000000"/>
+                </svg>                                                                  
+            </div>
+        </div>
+    </div>
+    <div class="blobs" id="blob1">
+        <svg width="534" height="618" viewBox="0 0 534 618" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
+            <path d="M10.1301 0H534V618C534 618 255.137 603.467 258.83 456.06C262.524 308.654 291.457 270.591 120.938 214.535C-49.5815 158.479 10.1301 0 10.1301 0Z" fill="url(#paint0_linear_118_13)"/>
+            <defs>
+            <linearGradient id="paint0_linear_118_13" x1="150" y1="178" x2="311.5" y2="-89" gradientUnits="userSpaceOnUse">
+            <stop offset="0.015625" stop-color="#FF9F0D"/>
+            <stop offset="0.996034" stop-color="#FFC327"/>
+            </linearGradient>
+            </defs>
+        </svg>                
+    </div>
+    <div id="div1-img1">
+        <img height="100%" width="100%" src="./IMAGE/bg2-preview.png" alt="" />
+    </div>
+    <div class="blobs" id="blob3">
+        <svg width="182" height="543" viewBox="0 0 182 543" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
+            <path d="M0.00146484 0C0.00146484 0 193.001 11.5 168 140.5C142.999 269.5 217.067 426.307 157.5 504C97.9333 581.693 0.00146484 517.5 0.00146484 517.5V0Z" fill="#FF9F0D"/>
+        </svg>
+    </div>
+    <!-- body design -->
+    <section>
+        <div class="displayContent">
+            <div id="div1">
+                <h1>
+                    Your Favourite Food <br /> Delivered Hot & <br /> Fresh
+                </h1> <br />  
+                <div id="div1Text">
+                    <p>
+                        Healthy switcher chefs do all the prep work, like peeding, chopping & marinating, so you can cook a fresh food.
+                    </p>
+                </div> <br />
+                <button class="btn btn-order">
+                    <a href="#">Order Now &rightarrow;</a>
+                </button> <br /> <br />
+            </div>
+            <div id="div2">
+                <!-- <picture>
+                    <source media="(max-width: 800px)" srcset="./IMAGE/landingPageImage.png" style="height: auto; width: auto;" type="image/png"> -->
+                    <img height="100%" width="100%" src="./IMAGE/landingPageImage.png" alt="Meal">
+                <!-- </picture> -->
+            </div>
+        </div>
+        <div class="contacts">
+            <div class="contact-pull">
+                <div class="pull-svg" onclick="scrollL(0)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="48" width="48" style="width: 65%; height: auto; transform: rotate(180deg);">
+                        <path d="m15.2 43.9-2.8-2.85L29.55 23.9 12.4 6.75l2.8-2.85 20 20Z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="contacts-container">
+                <div class="contactItems" id="items1">
+                    <div class="circular-icon">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
+                            <circle cx="50" cy="50" r="50" fill="none"/>
+                            <path d="M46.5 49V51.5H51.5V49H46.5ZM51.5 17C51.5 15.6193 50.3807 14.5 49 14.5C47.6193 14.5 46.5 15.6193 46.5 17H51.5ZM51.5 49V17H46.5V49H51.5Z" fill="#ffffff"/>
+                            <path d="M49 52L68.3901 61.6079" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <p class="mainPara">Today 10am-10pm</p>
+                    <p class="subPara">Working hour</p>
+                </div>
+                <div class="contactItems" id="items2">
+                    <div class="circular-icon">
+                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 50%; height: auto;">
+                            <path d="M8 20.0039C6.5565 18.8068 5.21851 17.4945 4 16.0806C2.17143 13.9572 1.00445e-06 10.795 1.00445e-06 7.78168C-0.000792022 6.24275 0.46801 4.73817 1.34708 3.45837C2.22615 2.17857 3.47597 1.18108 4.93836 0.59212C6.40076 0.00316302 8.01 -0.150778 9.56242 0.14978C11.1148 0.450337 12.5407 1.19188 13.6594 2.28057C14.4043 3.00152 14.9947 3.85894 15.3964 4.8032C15.7982 5.74747 16.0033 6.75982 16 7.78168C16 10.795 13.8286 13.9572 12 16.0806C10.7815 17.4945 9.44349 18.8068 8 20.0039ZM8 4.44834C7.09069 4.44834 6.21862 4.79953 5.57563 5.42466C4.93265 6.04978 4.57143 6.89762 4.57143 7.78168C4.57143 8.66573 4.93265 9.51358 5.57563 10.1387C6.21862 10.7638 7.09069 11.115 8 11.115C8.90931 11.115 9.78139 10.7638 10.4244 10.1387C11.0673 9.51358 11.4286 8.66573 11.4286 7.78168C11.4286 6.89762 11.0673 6.04978 10.4244 5.42466C9.78139 4.79953 8.90931 4.44834 8 4.44834Z" fill="#ffffff"/>
+                        </svg>                                
+                    </div>
+                    <p class="mainPara">Kekeshi GRA Quarters</p>
+                    <p class="subPara">Location</p>
+                </div>
+                <div class="contactItems" id="items3">
+                    <div class="circular-icon">
+                        <svg width="42" height="60" viewBox="0 0 42 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 50%; height: auto; transform: rotate(-9deg);">
+                            <path d="M7.66853 2.11385L10.8069 1.11051C13.7498 0.171346 16.8939 1.69093 18.1539 4.6601L20.6623 10.5751C21.7531 13.1505 21.1465 16.1809 19.1631 18.0651L13.636 23.3093C13.9773 26.4476 15.0331 29.5363 16.8006 32.5755C18.4791 35.5159 20.7304 38.0896 23.4215 40.1443L30.0598 37.9276C32.5739 37.0905 35.3156 38.0559 36.8556 40.3222L40.4519 45.6014C42.2456 48.238 41.9219 51.8722 39.6964 54.1063L37.3135 56.5009C34.9394 58.8838 31.5473 59.7501 28.4119 58.7701C21.0035 56.4601 14.1989 49.603 7.98645 38.1988C1.7652 26.7772 -0.43105 17.0822 1.40062 9.12551C2.17062 5.77718 4.55353 3.10843 7.66853 2.11385Z" fill="#ffffff"/>
+                        </svg>                            
+                    </div>
+                    <p class="mainPara">(+234) 810 757 5141</p>
+                    <p class="subPara">Contact address</p>                                   
+                </div>
+            </div>
+            <div class="contact-push">
+                <div class="push-svg" onclick="scrollr(0)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="48" width="48" style="width: 65%; height: auto; transform: rotate(180deg);">
+                        <path d="m15.2 43.9-2.8-2.85L29.55 23.9 12.4 6.75l2.8-2.85 20 20Z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="more-prod">   
+            <div class="items">
+                <div id="item1">
+                    <img height="100%" width="100%" src="./IMAGE/landingPageImage2.png" alt="">
+                </div>
+                <div id="item2">
+                    <span style="color: #ff9f0d;">About</span>
+                    <h2>Food Is An Important Part Of A Balance Diet</h2> <br />
+                    <p class="about-text">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus quaerat earum facilis,quidem nisi saepe nam nulla omnis recusandae.
+                    </p> <br />
+                    <p class="about-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.<br /> <br />
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p> <br />
+                    <div class="about-nav">
+                        <button class="btn btn-about"><a href="#">Read more</a></button>
+                        <div class="play-flex">
+                            <div id="play">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="#ffffff" d="M9.525 18.025q-.5.325-1.013.037Q8 17.775 8 17.175V6.825q0-.6.512-.888q.513-.287 1.013.038l8.15 5.175q.45.3.45.85t-.45.85Z"/></svg>
+                            </div>
+                            <p>Lorem, ipsum</p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        <div class="content3">
+            <div class="works">
+                <div class="works-content">
+                    <span style="color: #ff9f0d;">Works</span>
+                    <h3>How It Works</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos aliquam quisquam vel perferendis? Rem quam reprehenderit unde officia error deserunt.
+                    </p>
+                </div>
+            </div>
+            <div class="contacts content4">
+                <div class="contact-pull contact-pullAlias">
+                    <div class="pull-svg" onclick="scrollL(1)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="48" width="48" style="width: 65%; height: auto; transform: rotate(180deg);">
+                            <path d="m15.2 43.9-2.8-2.85L29.55 23.9 12.4 6.75l2.8-2.85 20 20Z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="contacts-container content-container">
+                    <div class="contactItems contentItems" id="items1">
+                        <div class="circular-icon content-circular-icon">
+                            <svg width="1908" height="1244" viewBox="0 0 1908 1244" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 90%; height: auto;">
+                                <path d="M143 442L118 453L96 461.5L73 473.5L60 483.5L40.5 501L20 528.5L11 545.5L0 563V600L29.5 660.5L85.5 774L167 930L179 946L207.5 967L217.5 979L322 1189.5L346 1212.5L375.5 1228L417 1238L452 1244H480.5L526 1238L544.5 1233.5L1654.5 990L1686.5 978L1720 957.5L1742 927.5L1789 790L1799 760.5L1822 753L1838 741L1853.5 730L1873 706L1887.5 685.5L1896 670V659.5V647.5V635.5L1887.5 620L1879.5 596L1860 565.5L1848 551L1843.5 542.5L1865.5 540L1887.5 534L1896 524L1908 519.5V506.5L1898 494.5L1908 487V477V459.5V444L1898 438.5V425.5L1887.5 415L1873 406L1860 399.5L1848 385V366.5L1838 347L1822 337H1810H1799H1789L1775 353.5L1755 366.5L1744.5 385L1732.5 406L1720.5 415L1710.5 406L1698.5 394L1684.5 385L1678 373V366.5L1667 353.5L1648.5 347L1643 337L1619 315.5L1643 304.5L1656 283.5L1667 264L1678 247.5L1684.5 242V227H1678L1667 207.5L1656 175.5V155L1648.5 138.5L1643 129L1630.5 123.5L1619 113.5H1609L1588 123.5L1576 129L1562 138.5H1553L1543.5 129L1529.5 123.5L1515 129H1502H1491L1479 138.5H1461.5H1434.5L1418 129L1406 123.5H1390.5H1375.5H1364.5L1352.5 113.5L1336 108L1325 99.5H1314L1298 94L1278.5 78.5H1264V73L1253 65.5H1245.5H1229L1217 59H1207L1188.5 51.5L1173.5 41.5L1164.5 36L1152.5 30.5H1139.5L1127.5 25L1110 17.5H1091.5L1080.5 12H1071L1062 5.5H1052.5H1044.5L1037 0H1029.5L1020.5 5.5L1005.5 0H994.5H980H968.5H956H930H913.5L900.5 5.5H879H869L857 12H847L836 17.5L825.5 25H812L800 30.5L783.5 36L774 51.5L764 59L753 65.5L745.5 73L739 78.5L729 86L720.5 99.5L706 113.5L697.5 123.5L692 134.5L682.5 143L675.5 157L661.5 167V176L646 194L639.5 205L623.5 210.5L602.5 224L579.5 233.5V242H563.5L550 249L539 254.5L526 265H520.5L510 271.5H498L486 279.5L479.5 287L467 296L446.5 306.5L428 315.5L413.5 324L405 328.5L398.5 337.5H390L382 345L370 352.5L360.5 360L352.5 366.5L342 371L336.5 378.5L323 383L309 394L300 401.5L294 409.5H285H273L243.5 415L213 421L188 428L164 435.5L143 442Z" fill="#FF9F0D"/>
+                            </svg>                                                           
+                        </div> <br />
+                        <strong class="mainPara">Pick Meals</strong> <br />
+                        <p class="subPara">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. At explicabo tenetur dolore nihil neque aut soluta.
+                        </p>
+                    </div>
+                    <div class="contactItems contentItems" id="items2">
+                        <div class="circular-icon content-circular-icon">
+                            <svg width="56" height="77" viewBox="0 0 56 77" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 48%; height: auto;">
+                                <path d="M15.625 30.5312C13.5708 29.1417 11.849 27.253 10.4594 24.8654C9.06979 22.4801 8.375 19.8375 8.375 16.9375C8.375 12.4062 9.96033 8.55408 13.131 5.381C16.3041 2.21033 20.1562 0.625 24.6875 0.625C29.2188 0.625 33.0709 2.21033 36.244 5.381C39.4147 8.55408 41 12.4062 41 16.9375C41 19.9583 40.2907 22.6312 38.8721 24.956C37.4511 27.2832 35.7438 29.1417 33.75 30.5312V16.9375C33.75 14.4 32.874 12.2552 31.1219 10.5031C29.3698 8.75104 27.225 7.875 24.6875 7.875C22.15 7.875 20.0052 8.75104 18.2531 10.5031C16.501 12.2552 15.625 14.4 15.625 16.9375V30.5312ZM22.6937 76.75C21.6667 76.75 20.7459 76.5688 19.9315 76.2063C19.1147 75.8438 18.3438 75.3 17.6188 74.575L0.21875 57.2656L3.20937 54.1844C3.63229 53.7615 4.13133 53.4594 4.7065 53.2781C5.27925 53.0969 5.89792 53.0667 6.5625 53.1875L19.25 55.9062V16.9375C19.25 15.4271 19.7792 14.1438 20.8377 13.0878C21.8938 12.0293 23.1771 11.5 24.6875 11.5C26.1979 11.5 27.4812 12.0293 28.5373 13.0878C29.5958 14.1438 30.125 15.4271 30.125 16.9375V38.6875H32.3C32.8438 38.6875 33.402 38.7479 33.9748 38.8688C34.5499 38.9896 35.0792 39.1708 35.5625 39.4125L51.5125 46.8438C52.9625 47.5083 54.0355 48.5354 54.7315 49.925C55.4251 51.3146 55.651 52.7948 55.4094 54.3656L53.1438 70.4969C52.9021 72.249 52.0865 73.7292 50.6969 74.9375C49.3073 76.1458 47.7365 76.75 45.9844 76.75H22.6937Z" fill="#FF9F0D"/>
+                            </svg>                                
+                        </div> <br />
+                        <strong class="mainPara">Choose How Often</strong> <br />
+                        <p class="subPara">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis consequatur dolor
+                        </p>
+                    </div>
+                    <div class="contactItems contentItems" id="items3">
+                        <div class="circular-icon content-circular-icon">
+                            <svg width="63" height="38" viewBox="0 0 63 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
+                                <path d="M1.5 0.75C1.08579 0.75 0.75 1.08579 0.75 1.5V11.5C0.75 11.9142 1.08579 12.25 1.5 12.25H13.75V16.25H7C6.58579 16.25 6.25 16.5858 6.25 17V33C6.25 33.4142 6.58579 33.75 7 33.75H14.5H39.5C39.9142 33.75 40.25 33.4142 40.25 33V1.5C40.25 1.08579 39.9142 0.75 39.5 0.75H1.5Z" fill="#FF9F0D" stroke="#FF9F0D" stroke-width="1.5" stroke-linejoin="round"/>
+                                <path d="M40.5 9.75C40.0858 9.75 39.75 10.0858 39.75 10.5V33C39.75 33.4142 40.0858 33.75 40.5 33.75H61.5C61.9142 33.75 62.25 33.4142 62.25 33V23C62.25 22.896 62.2284 22.7931 62.1865 22.6979L56.6865 10.1979C56.5667 9.92573 56.2974 9.75 56 9.75H40.5Z" fill="#FF9F0D" stroke="#FF9F0D" stroke-width="1.5" stroke-linejoin="round"/>
+                                <path d="M23.1429 37.25C21.9711 37.25 20.8514 36.7972 20.0291 35.9978C19.2075 35.199 18.75 34.1202 18.75 33C18.75 31.8798 19.2075 30.801 20.0291 30.0022C20.8514 29.2028 21.9711 28.75 23.1429 28.75C24.3146 28.75 25.4343 29.2028 26.2566 30.0022C27.0782 30.801 27.5357 31.8798 27.5357 33C27.5357 34.1202 27.0782 35.199 26.2566 35.9978C25.4343 36.7972 24.3146 37.25 23.1429 37.25ZM48.8571 37.25C47.6854 37.25 46.5657 36.7972 45.7434 35.9978C44.9218 35.199 44.4643 34.1202 44.4643 33C44.4643 31.8798 44.9218 30.801 45.7434 30.0022C46.5657 29.2028 47.6854 28.75 48.8571 28.75C50.0289 28.75 51.1486 29.2028 51.9709 30.0022C52.7925 30.801 53.25 31.8798 53.25 33C53.25 34.1202 52.7925 35.199 51.9709 35.9978C51.1486 36.7972 50.0289 37.25 48.8571 37.25Z" fill="white" stroke="#FF9F0D" stroke-width="1.5" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M56.1761 10.1755C56.0246 9.85983 55.6749 9.69101 55.3336 9.7687C54.9922 9.84638 54.75 10.1499 54.75 10.5V23C54.75 23.4142 55.0858 23.75 55.5 23.75H61.5C61.7578 23.75 61.9975 23.6176 62.1348 23.3994C62.2721 23.1812 62.2877 22.9078 62.1761 22.6755L56.1761 10.1755Z" fill="white" stroke="#FF9F0D" stroke-width="1.5" stroke-linejoin="round"/>
+                            </svg>                                
+                        </div> 
+                        <br />
+                        <strong class="mainPara">Fast Deliveries</strong> <br />
+                        <p class="subPara">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic numquam officia eligendi, enim deleniti animi.
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-push contact-pushAlias">
+                    <div class="push-svg" onclick="scrollr(1)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="48" width="48" style="width: 65%; height: auto; transform: rotate(180deg);">
+                            <path d="m15.2 43.9-2.8-2.85L29.55 23.9 12.4 6.75l2.8-2.85 20 20Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="short-note">
+                <span style="color: #ff9f0d;">Menu</span>
+                <h3>Explore Our Best Menu</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti perferendis eveniet neque distinctio expedita alias, nemo esse aperiam amet laborum
+                </p>
+            </div>
+            <div class="menu-grid menu-grid-toggle">
+                <div class="menu-items">
+                    <div class="img-food">
+                        <img loading="lazy" height="100%" width="100%" src="./IMAGE/Pizza.jpg" alt="pizza">
+                    </div>
+                    <div class="chef-desc">
+                        <div class="bio-price">
+                            <div class="cook-bio">
+                                <strong class="nameOfCook">Pizza</strong> <br />
+                                <span>Abuja, FCT</span>
+                            </div>
+                            <div class="cook-price">
+                                <strong>$10</strong>
+                            </div>
+                        </div>
+                        <p class="cook-desc"></p>
+                        <div class="rate-add">
+                            <div id="rate">
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>                                                                            
+                            </div>
+                            <div id="add">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="1.5" y1="7.5" x2="14.5" y2="7.5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                    <line x1="8.50002" y1="14.5" x2="8.5002" y2="1.49998" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                </svg>                                    
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-items">
+                    <div class="img-food">
+                        <img loading="lazy" height="100%" width="100%" src="./IMAGE/spices.jpg" alt="pizza">
+                    </div>
+                    <div class="chef-desc">
+                        <div class="bio-price">
+                            <div class="cook-bio">
+                                <strong class="nameOfCook">SandWich</strong> <br />
+                                <span>Lokoja, Kogi</span>
+                            </div>
+                            <div class="cook-price">
+                                <strong>$5</strong>
+                            </div>
+                        </div>
+                        <p class="cook-desc"></p>
+                        <div class="rate-add">
+                            <div id="rate">
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill=""/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill=""/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill=""/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill=""/>
+                                </svg>                                                                            
+                            </div>
+                            <div id="add">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="1.5" y1="7.5" x2="14.5" y2="7.5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                    <line x1="8.50002" y1="14.5" x2="8.5002" y2="1.49998" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                </svg>                                    
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-items">
+                    <div class="img-food">
+                        <img loading="lazy" height="100%" width="100%" src="./IMAGE/spices2.jpg" alt="spices">
+                    </div>
+                    <div class="chef-desc">
+                        <div class="bio-price">
+                            <div class="cook-bio">
+                                <strong class="nameOfCook">Vegetable Dish</strong> <br />
+                                <span>Ikeja, Lagos</span>
+                            </div>
+                            <div class="cook-price">
+                                <strong>$16</strong>
+                            </div>
+                        </div>
+                        <p class="cook-desc"></p>
+                        <div class="rate-add">
+                            <div id="rate">
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>                                                                            
+                            </div>
+                            <div id="add">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="1.5" y1="7.5" x2="14.5" y2="7.5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                    <line x1="8.50002" y1="14.5" x2="8.5002" y2="1.49998" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                </svg>                                    
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-items">
+                    <div class="img-food">
+                        <img loading="lazy" height="100%" width="100%" src="./IMAGE/spices.jpg" alt="spices">
+                    </div>
+                    <div class="chef-desc">
+                        <div class="bio-price">
+                            <div class="cook-bio">
+                                <strong class="nameOfCook">SandWich</strong> <br />
+                                <span>Kano, Kano</span>
+                            </div>
+                            <div class="cook-price">
+                                <strong>$15</strong>
+                            </div>
+                        </div>
+                        <p class="cook-desc"></p>
+                        <div class="rate-add">
+                            <div id="rate">
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill=""/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill=""/>
+                                </svg>                                                                            
+                            </div>
+                            <div id="add">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="1.5" y1="7.5" x2="14.5" y2="7.5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                    <line x1="8.50002" y1="14.5" x2="8.5002" y2="1.49998" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                </svg>                                    
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-items">
+                    <div class="img-food">
+                        <img loading="lazy" height="100%" width="100%" src="./IMAGE/Pizza.jpg" alt="pizza">
+                    </div>
+                    <div class="chef-desc">
+                        <div class="bio-price">
+                            <div class="cook-bio">
+                                <strong class="nameOfCook">Pizza</strong> <br />
+                                <span>Kwali, FCT</span>
+                            </div>
+                            <div class="cook-price">
+                                <strong>$15</strong>
+                            </div>
+                        </div>
+                        <p class="cook-desc"></p>
+                        <div class="rate-add">
+                            <div id="rate">
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill=""/>
+                                </svg>                                                                            
+                            </div>
+                            <div id="add">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="1.5" y1="7.5" x2="14.5" y2="7.5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                    <line x1="8.50002" y1="14.5" x2="8.5002" y2="1.49998" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                </svg>                                    
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-items">
+                    <div class="img-food">
+                        <img loading="lazy" height="100%" width="100%" src="./IMAGE/spices.jpg" alt="spices">
+                    </div>
+                    <div class="chef-desc">
+                        <div class="bio-price">
+                            <div class="cook-bio">
+                                <strong class="nameOfCook">SandWich</strong> <br />
+                                <span>Ilorin, Kwara</span>
+                            </div>
+                            <div class="cook-price">
+                                <strong>$20</strong>
+                            </div>
+                        </div>
+                        <p class="cook-desc"></p>
+                        <div class="rate-add">
+                            <div id="rate">
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                                </svg>                                                                            
+                            </div>
+                            <div id="add">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="1.5" y1="7.5" x2="14.5" y2="7.5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                    <line x1="8.50002" y1="14.5" x2="8.5002" y2="1.49998" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                </svg>                                    
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn-order"><a href="#">Explore</a></button>
+            <div class="comment short-note">
+                <span style="color: #ff9f0d;">Comment</span>
+                <h3>What They Are Saying</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti perferendis eveniet neque distinctio expedita alias, nemo esse aperiam amet laborum
+                </p>
+            </div>
+            <div class="seller short-note">
+                <div class="seller-img">
+                    <img style="height: 100%; width: 100%; border-radius: 50%;" src="./IMAGE/trinity.jpg" alt="seller-Image">
+                </div> <br />
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti perferendis eveniet neque distinctio expedita alias, nemo esse aperiam amet laborum?
+                </p>
+                <div id="rate">
+                    <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                    </svg>
+                    <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                    </svg>
+                    <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                    </svg>
+                    <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill="#FF9F0D"/>
+                    </svg>
+                    <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z" fill=""/>
+                    </svg>
+                </div>
+            </div>
+            <div class="question short-note">
+                <h3>Have Question In Mind? <br /> Let us help you</h3>
+            </div>
+            <form action="" method="get">
+                <div class="search-container">
+                    <input type="search" name="search" id="search" placeholder="Search Aroma Meals">
+                    <div class="submit-switch">
+                        <button type="submit" class="btn-search">Send</button>
+                        <div class="search-icon">
+                            <svg width="107" height="107" viewBox="0 0 107 107" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: auto; width: inherit;">
+                                <path d="M46.9166 93.2499C55.7159 93.2481 64.2982 90.7264 71.6665 86.0285C73.7969 84.6702 76.6212 84.8164 78.4078 86.603L97.203 105.398C99.1556 107.351 102.321 107.351 104.274 105.398L105.392 104.28C107.345 102.327 107.345 99.1614 105.392 97.2088L86.5979 78.4142C84.811 76.6274 84.665 73.8025 86.024 71.672C90.7245 64.3026 93.2478 55.7183 93.2499 46.9166C93.2499 21.3695 72.4636 0.583252 46.9166 0.583252C21.3695 0.583252 0.583252 21.3695 0.583252 46.9166C0.583252 72.4636 21.3695 93.2499 46.9166 93.2499ZM46.9166 12.1666C66.0812 12.1666 81.6666 27.752 81.6666 46.9166C81.6666 66.0812 66.0812 81.6666 46.9166 81.6666C27.752 81.6666 12.1666 66.0812 12.1666 46.9166C12.1666 27.752 27.752 12.1666 46.9166 12.1666Z" fill="black"/>
+                                <path d="M55.0944 38.7271C57.2894 40.928 58.4999 43.8354 58.4999 46.9166H70.0832C70.0884 43.8726 69.4901 40.8579 68.323 38.0465C67.1559 35.2352 65.4432 32.6831 63.2838 30.5377C54.5152 21.7807 39.3121 21.7807 30.5493 30.5377L38.7272 38.7387C43.1288 34.3486 50.7159 34.3602 55.0944 38.7271Z" fill="black"/>
+                            </svg>                                
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <div id="div2-img2">
+        <img height="100%" width="100%" src="./IMAGE/bg2-preview.png" alt="">
+    </div>
+    <div class="bg-leaf-img">
+        <img height="100%" width="100%" src="./IMAGE/bg-leaf1.png" alt="background-leaf">
+    </div>
+    <div id="blob2">
+        <svg width="347" height="394" viewBox="0 0 347 394" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height:auto;">
+            <path d="M206.5 266.5C288 258 160.5 44.5 347 0V394H0.5C26 368 -11.4031 289.226 206.5 266.5Z" fill="#FF9F0D"/>
+        </svg>
+    </div>
+    <footer class="footer">
+        <div class="footer-nav">
+            <div class="footer-list footer-nav1">
+                <div class="footer-img">
+                    <img src="./IMAGE/first_logo.png" alt="brand-logo" height="100%" width="100%">
+                </div>
+                <div class="social-media">
+                    <svg width="42" height="80" viewBox="0 0 42 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: auto; width: 6%;">
+                        <path d="M37.612 27.9999H28V19.9999C28 15.8719 28.336 13.2719 34.252 13.2719H37.724C39.932 13.2719 41.724 11.4799 41.724 9.2719V4.25591C41.724 2.16391 40.12 0.375906 38.032 0.235906C35.616 0.0719058 33.196 -0.00409427 30.772 -9.42655e-05C19.92 -9.42655e-05 12 6.62791 12 18.7959V27.9999H4C1.792 27.9999 0 29.7919 0 31.9999V39.9999C0 42.2079 1.792 43.9999 4 43.9999L12 43.9959V75.9999C12 78.2079 13.792 79.9999 16 79.9999H24C26.208 79.9999 28 78.2079 28 75.9999V43.9879L36.696 43.9839C38.728 43.9839 40.436 42.4599 40.668 40.4399L41.584 32.4559C41.86 30.0839 40.004 27.9999 37.612 27.9999Z" fill="#000000"/>
+                    </svg>
+                    <svg width="81" height="65" viewBox="0 0 81 65" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: auto; width: 12%;">
+                        <path d="M79.5361 1.12409C76.2761 2.66409 70.7281 5.55209 67.9401 6.10409C67.8321 6.13209 67.7441 6.16809 67.6401 6.19609C64.3881 2.98809 59.9321 1.00009 55.0001 1.00009C45.0601 1.00009 37.0001 9.06009 37.0001 19.0001C37.0001 19.5241 36.9561 20.4881 37.0001 21.0001C24.1281 21.0001 14.7281 14.2841 7.69208 5.65209C6.75208 4.49209 5.75208 5.09609 5.54408 5.92009C5.07608 7.78409 4.91608 10.9001 4.91608 13.1241C4.91608 18.7281 9.29608 24.2321 16.1161 27.6441C14.8601 27.9681 13.4761 28.2001 12.0361 28.2001C10.3401 28.2001 8.38808 27.7561 6.68008 26.8601C6.04808 26.5281 4.68408 26.6201 5.08808 28.2361C6.70808 34.7121 14.1001 39.2601 20.7041 40.5841C19.2041 41.4681 16.0041 41.2881 14.5321 41.2881C13.9881 41.2881 12.0961 41.1601 10.8721 41.0081C9.75608 40.8721 8.04008 41.1601 9.47608 43.3361C12.5601 48.0041 19.5361 50.9361 25.5401 51.0481C20.0121 55.3841 10.9721 56.9681 2.31208 56.9681C0.560077 56.9281 0.648077 58.9241 2.06008 59.6641C8.44808 63.0161 18.9121 65.0001 26.3881 65.0001C56.1081 65.0001 73.0001 42.3481 73.0001 20.9961C73.0001 20.6521 72.9921 19.9321 72.9801 19.2081C72.9801 19.1361 73.0001 19.0681 73.0001 18.9961C73.0001 18.8881 72.9681 18.7841 72.9681 18.6761C72.9561 18.1321 72.9441 17.6241 72.9321 17.3601C75.2881 15.6601 78.8961 12.7081 80.7201 10.4481C81.3401 9.68009 80.8401 8.74809 79.9961 9.04009C77.8241 9.79609 74.0681 11.2601 71.7161 11.5401C76.4241 8.42409 78.7521 5.71209 80.7521 2.70009C81.4361 1.67209 80.5801 0.628091 79.5361 1.12409Z" fill="#000000"/>
+                    </svg> 
+                    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: auto; width: 10%;">
+                        <path d="M20 0C8.956 0 0 8.956 0 20V52C0 63.044 8.956 72 20 72H52C63.044 72 72 63.044 72 52V20C72 8.956 63.044 0 52 0H20ZM60 8C62.208 8 64 9.792 64 12C64 14.208 62.208 16 60 16C57.792 16 56 14.208 56 12C56 9.792 57.792 8 60 8ZM36 16C47.044 16 56 24.956 56 36C56 47.044 47.044 56 36 56C24.956 56 16 47.044 16 36C16 24.956 24.956 16 36 16ZM36 24C32.8174 24 29.7652 25.2643 27.5147 27.5147C25.2643 29.7652 24 32.8174 24 36C24 39.1826 25.2643 42.2348 27.5147 44.4853C29.7652 46.7357 32.8174 48 36 48C39.1826 48 42.2348 46.7357 44.4853 44.4853C46.7357 42.2348 48 39.1826 48 36C48 32.8174 46.7357 29.7652 44.4853 27.5147C42.2348 25.2643 39.1826 24 36 24Z" fill="#000000"/>
+                    </svg>
+                    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: auto; width: 10%;">
+                        <path d="M12 0C5.42012 0 0 5.42012 0 12V60C0 66.5799 5.42012 72 12 72H60C66.5799 72 72 66.5799 72 60V12C72 5.42012 66.5799 0 60 0H12ZM12 8H60C62.2601 8 64 9.73988 64 12V60C64 62.2601 62.2601 64 60 64H12C9.73988 64 8 62.2601 8 60V12C8 9.73988 9.73988 8 12 8ZM36 16V44C36 46.2601 34.2601 48 32 48C29.7399 48 28 46.2601 28 44C28 41.7399 29.7399 40 32 40V32C25.4201 32 20 37.4201 20 44C20 50.5799 25.4201 56 32 56C38.5799 56 44 50.5799 44 44V28.9297C46.4646 30.6854 49.0365 32 52 32V24C51.8107 24 49.0507 23.1237 47.125 21.4453C45.1993 19.7669 44 17.66 44 16H36Z" fill="#000000"/>
+                    </svg>                                                                  
+                </div>
+            </div>
+            <div class="footer-list footer-nav2">
+                <h3>Varieties</h3>
+                <div class="footer-foodItems">
+                    <ul>
+                        <li>Spinach</li>
+                        <li>Bucket chicken</li>
+                        <li>Coconut rice</li>
+                        <li>Pizza</li>
+                        <li>Cakes and Confectioneries</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-list footer-nav3">
+                <h3>Packages</h3>
+                <div>
+                    <p>Lorem, ipsum dolor.</p>
+                    <p>Lorem, ipsum dolor.</p>
+                    <p>Lorem, ipsum dolor.</p>
+                </div>
+            </div>
+            <div class="footer-list footer-nav4">
+                <h3>About us</h3>
+                <div>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error delectus deserunt quam hic voluptatem, iste suscipit! Veniam incidunt iure numquam.
+                </div>
+            </div>
+            <div class="footer-list footer-nav5">
+                <h3>Contact us</h3>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta beatae veritatis similique id ipsa! Culpa ducimus rerum commodi, ipsa sapiente aliquam ipsam quia ratione possimus veniam nobis. Magni, temporibus ad?
+                </div>
+            </div>
+        </div>
+        <div class="footer-end">
+            &copy;2022 Aloma.com.ng By Trinity
+        </div>
+    </footer>
+    
+    <script src="./JS/cookdesc.js"></script>
+</body>
+</html>
